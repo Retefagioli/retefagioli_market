@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retefagioli_market/services/authentication/userAuthentication.dart';
 import 'widget_custom.dart';
 
 class LoginFormCustom extends StatefulWidget {
@@ -15,6 +16,7 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
   TextEditingController passwordController = TextEditingController();
   String? password;
   String? email;
+  Authenticator authenticator = Authenticator();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,9 +64,17 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
             margin: const EdgeInsets.all(11.0),
             child: ButtonCustom(
               customText: "Login",
-              onPressed: ()  {
+              onPressed: () async {
                 email = emailController.text;
                 password = passwordController.text;
+                String? result = await authenticator.authenticateUser(email!, password!);
+                if (result == null) {
+                  debugPrint("Autenticato");
+                } else {
+                  emailController.text = "";
+                  passwordController.text = "";
+                  debugPrint(result);
+                }
               },
             ),
           ),
@@ -90,6 +100,13 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
     } else {
       return null;
     }
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 }
 
