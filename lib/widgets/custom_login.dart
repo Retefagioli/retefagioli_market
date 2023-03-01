@@ -5,7 +5,7 @@ class LoginFormCustom extends StatefulWidget {
   const LoginFormCustom({Key? key}) : super(key: key);
 
   @override
-  _LoginFormCustomState createState() => _LoginFormCustomState();
+  State<LoginFormCustom> createState() => _LoginFormCustomState();
 }
 
 class _LoginFormCustomState extends State<LoginFormCustom> {
@@ -36,6 +36,7 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
                     customText: "Email",
                     obscureTextBool: false,
                     validator: checkEmail,
+                    controller: emailController,
                   ),
                 ),
                 Container(
@@ -44,6 +45,7 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
                     customText: "Password",
                     obscureTextBool: true,
                     validator: checkPassword,
+                    controller: passwordController,
                   ),
                 ),
               ],
