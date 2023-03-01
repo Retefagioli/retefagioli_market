@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "273398682154",
+    "project_id": "retefagioli-market",
+    "storage_bucket": "retefagioli-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273398682154:android:783fa3789f69b8f8c6e953",
+        "android_client_info": {
+          "package_name": "com.example.retefagioli_market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273398682154-qrkl4nua7epfeumq3lhkvcoiifuhfkpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDveP4DEbwOcRkDhgRhJwhiuoT5wB5Uj4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273398682154-qrkl4nua7epfeumq3lhkvcoiifuhfkpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
