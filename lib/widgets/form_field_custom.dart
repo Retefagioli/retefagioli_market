@@ -6,11 +6,13 @@ class FormFieldCustom extends StatefulWidget {
   bool obscureToogle = false;
   final String? Function(String?) validator;
   Icon obscureIconToogle = const Icon(Icons.lock);
+  final TextEditingController? controller;
   FormFieldCustom(
       {super.key,
       this.customText = "customTextPlaceholder",
       this.obscureTextBool = false,
       required this.validator,
+      this.controller
       }) {
     obscureToogle = obscureTextBool;
   }
@@ -23,6 +25,7 @@ class _FormFieldCustomState extends State<FormFieldCustom> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       autocorrect: false,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: widget.obscureToogle,

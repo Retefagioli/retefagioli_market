@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: Image.asset("assets/images/retefagiolirevisitedultra.png"),
           ),
-          LoginFormCustom(),
+          const LoginFormCustom(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

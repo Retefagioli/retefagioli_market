@@ -10,6 +10,9 @@ class LoginFormCustom extends StatefulWidget {
 
 class _LoginFormCustomState extends State<LoginFormCustom> {
   final _formKey = GlobalKey<FormState>();
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   String? password;
   String? email;
   @override
@@ -55,14 +58,18 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
           ),
           Container(
             margin: const EdgeInsets.all(11.0),
-            child: const ButtonCustom(
+            child: ButtonCustom(
               customText: "Login",
-              onPressed: buttonPressed,
+              onPressed: ()  {
+                email = emailController.text;
+                password = passwordController.text;
+              },
             ),
           ),
         ],
       ),
     );
+
   }
 
   String? checkEmail(String? email) {
@@ -84,6 +91,3 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
   }
 }
 
-void buttonPressed() {
-  
-}
