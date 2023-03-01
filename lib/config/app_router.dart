@@ -11,9 +11,10 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/login',
+      name: "home",
+      path: '/home',
       builder: (BuildContext context, GoRouterState state) {
-        return const LoginScreen();
+        return const HomeScreen();
       },
     ),
   ],
