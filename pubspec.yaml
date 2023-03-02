@@ -39,6 +39,7 @@ dependencies:
   go_router: ^6.2.0
   firebase_auth: ^4.2.9
   firebase_database: ^10.0.14
+  flutter_native_splash: ^2.2.18
 
 dev_dependencies:
   flutter_test:
