@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:retefagioli_market/widgets/widget_custom.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -8,6 +9,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  @override
+  void initState() { 
+    super.initState();
+    initialize();
+  }
+
+  void initialize() async {
+        await Future.delayed(const Duration(milliseconds: 40));
+        FlutterNativeSplash.remove();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
