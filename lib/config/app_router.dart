@@ -24,5 +24,12 @@ final GoRouter router = GoRouter(
         return HomeScreen();
       },
     ),
+    GoRoute(
+      name: "register",
+      path: "/register",
+      builder: (BuildContext context, GoRouterState state) {
+        return RegisterScreen();
+      },
+    ),
   ],
 );

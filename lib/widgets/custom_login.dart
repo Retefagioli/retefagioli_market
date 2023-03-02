@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:retefagioli_market/services/authentication/userAuthentication.dart';
 import 'widget_custom.dart';
 import 'package:retefagioli_market/config/app_router.dart';
@@ -72,7 +71,7 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
                 String? result = await authenticator.authenticateUser(email!, password!);
                 if (result == null) {
                   debugPrint("Autenticato");
-                  context.go("/home");
+                  router.go("/home");
                 } else {
                   emailController.text = "";
                   passwordController.text = "";

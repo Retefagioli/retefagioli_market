@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:retefagioli_market/widgets/widget_custom.dart';
 
+import '../config/app_router.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
   @override
@@ -42,7 +44,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Text("Non sei ancora membro?"),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      router.go("/register");
+                    },
                     child: const Text("Registrati qui"),
                   ),
                 ],
