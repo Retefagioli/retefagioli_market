@@ -17,4 +17,8 @@ class Authenticator {
       return "Wrong Password or email";
     }
   }
+
+  Future<void>? logoutUser() {
+    return _firebaseAuth?.signOut();
+  }
 }
