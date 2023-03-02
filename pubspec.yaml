@@ -76,3 +76,10 @@ flutter:
           weight: 300
         - asset: assets/fonts/Inter-Bold.otf
           weight: 700
+
+flutter_native_splash:
+  image: assets/images/small-logo32x32.png
+  color: "#ffffff"
+  android_12:
+    image: assets/images/small-logo32x32.png
+    color: "#ffffff"

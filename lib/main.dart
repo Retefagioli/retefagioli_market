@@ -6,7 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-    FlutterNativeSplash.preserve(widgetsBinding: WidgetsBinding.instance);
+  FlutterNativeSplash.preserve(widgetsBinding: WidgetsBinding.instance);
   runApp(const MyApp());
 }
 
