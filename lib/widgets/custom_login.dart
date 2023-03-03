@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:retefagioli_market/services/authentication/userAuthentication.dart';
 import 'widget_custom.dart';
 import 'package:retefagioli_market/config/app_router.dart';
+import 'package:retefagioli_market/services/utils/validators.dart';
 
 class LoginFormCustom extends StatefulWidget {
   const LoginFormCustom({Key? key}) : super(key: key);
@@ -27,8 +28,9 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-              margin: const EdgeInsets.all(10.0),
-              child: const TitleCustom(customText: "Entra")),
+            margin: const EdgeInsets.all(10.0),
+            child: const TitleCustom(customText: "Entra"),
+          ),
           Form(
             key: _formKey,
             child: Column(
@@ -47,7 +49,7 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
                   child: FormFieldCustom(
                     customText: "Password",
                     obscureTextBool: true,
-                    validator: checkPassword,
+                    validator: checkLoginPassword,
                     controller: passwordController,
                   ),
                 ),
@@ -68,7 +70,8 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
               onPressed: () async {
                 email = emailController.text;
                 password = passwordController.text;
-                String? result = await authenticator.authenticateUser(email!, password!);
+                String? result =
+                    await authenticator.authenticateUser(email!, password!);
                 if (result == null) {
                   debugPrint("Autenticato");
                   router.go("/home");
@@ -82,25 +85,6 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
         ],
       ),
     );
-
-  }
-
-  String? checkEmail(String? email) {
-    final RegExp emailExp = RegExp(
-        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
-    if (email == null || email.isEmpty || !emailExp.hasMatch(email)) {
-      return "Email non valida";
-    } else {
-      return null;
-    }
-  }
-
-  String? checkPassword(String? password) {
-    if (password == null || password.isEmpty) {
-      return "Password non valida";
-    } else {
-      return null;
-    }
   }
 
   @override
@@ -110,4 +94,3 @@ class _LoginFormCustomState extends State<LoginFormCustom> {
     super.dispose();
   }
 }
-
