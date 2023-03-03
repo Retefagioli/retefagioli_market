@@ -14,6 +14,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
@@ -26,23 +27,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
         foregroundColor: Colors.white,
         shadowColor: Colors.white,
       ),
-      resizeToAvoidBottomInset: false,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          const RegistrationFormCustom(),
-          Container(
-            margin: const EdgeInsets.only(bottom: 40.0),
-            child: Row(
-             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-             children: const [
-                FaIcon(FontAwesomeIcons.circleDot),
-                FaIcon(FontAwesomeIcons.circle),
-                FaIcon(FontAwesomeIcons.circle),
-             ], 
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const RegistrationFormCustom(),
+            Container(
+              margin: const EdgeInsets.only(bottom: 40.0),
+              child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+               children: const [
+                  FaIcon(FontAwesomeIcons.circleDot),
+                  FaIcon(FontAwesomeIcons.circle),
+                  FaIcon(FontAwesomeIcons.circle),
+               ], 
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

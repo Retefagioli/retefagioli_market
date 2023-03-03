@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'widget_custom.dart';
 import 'package:retefagioli_market/services/utils/validators.dart';
@@ -17,57 +19,62 @@ class _RegistrationFormCustomState extends State<RegistrationFormCustom> {
       TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(40.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            margin: const EdgeInsets.all(14.0),
-            child: const TitleCustom(customText: "Registrati"),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: FormFieldCustom(
-              customText: "Username",
-              validator: checkUsername,
-              controller: usernameController,
+
+    double bottom = max(min((MediaQuery.of(context).viewInsets.bottom),80),0);
+    return Padding(
+      padding: EdgeInsets.only(bottom: bottom),
+      child: Container(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              margin: const EdgeInsets.all(14.0),
+              child: const TitleCustom(customText: "Registrati"),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: FormFieldCustom(
-              customText: "Email",
-              validator: checkEmail,
-              controller: emailController,
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: FormFieldCustom(
+                customText: "Username",
+                validator: checkUsername,
+                controller: usernameController,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: FormFieldCustom(
-              customText: "Password",
-              validator: checkRegistrationPassword,
-              obscureTextBool: true,
-              controller: passwordController,
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: FormFieldCustom(
+                customText: "Email",
+                validator: checkEmail,
+                controller: emailController,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: FormFieldCustom(
-              customText: "Confirm Password",
-              validator: checkSecondPassword,
-              obscureTextBool: true,
-              controller: secondPasswordController,
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: FormFieldCustom(
+                customText: "Password",
+                validator: checkRegistrationPassword,
+                obscureTextBool: true,
+                controller: passwordController,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0),
-            child: ButtonCustom(
-              customText: "Continua",
-              onPressed: () => {},
+            Container(
+                padding: const EdgeInsets.all(10.0),
+                child: FormFieldCustom(
+                  customText: "Confirm Password",
+                  validator: checkSecondPassword,
+                  obscureTextBool: true,
+                  controller: secondPasswordController,
+                ),
+              ),
+            Container(
+              padding: const EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0),
+              child: ButtonCustom(
+                customText: "Continua",
+                onPressed: () => {},
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
