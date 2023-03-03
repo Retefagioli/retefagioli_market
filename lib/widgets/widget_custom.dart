@@ -1,4 +1,5 @@
-export 'package:retefagioli_market/widgets/form_field_custom.dart';
-export 'package:retefagioli_market/widgets/custom_title.dart';
-export 'package:retefagioli_market/widgets/custom_login.dart';
-export 'package:retefagioli_market/widgets/custom_button.dart';
+export 'form_field_custom.dart';
+export 'custom_title.dart';
+export 'custom_login.dart';
+export 'custom_button.dart';
+export 'custom_registration.dart';
