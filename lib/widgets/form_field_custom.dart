@@ -31,6 +31,7 @@ class _FormFieldCustomState extends State<FormFieldCustom> {
       obscureText: widget.obscureToogle,
       validator: widget.validator,
       decoration: InputDecoration(
+        errorMaxLines: 2,
         labelText: widget.customText,
         labelStyle: const TextStyle(
           fontSize: 17.0,
