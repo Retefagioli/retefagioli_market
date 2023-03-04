@@ -5,6 +5,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:retefagioli_market/widgets/widget_custom.dart';
 import '../config/app_router.dart';
 
+enum RegistrationState {
+  credentials,
+  personalInfo,
+  confirmation,
+}
+
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
