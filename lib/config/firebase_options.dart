@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '273398682154',
     projectId: 'retefagioli-market',
     storageBucket: 'retefagioli-market.appspot.com',
-    iosClientId: '273398682154-6502pt1dvoi9rjt4lia6pqbp6s5kvb3m.apps.googleusercontent.com',
+    iosClientId:
+        '273398682154-6502pt1dvoi9rjt4lia6pqbp6s5kvb3m.apps.googleusercontent.com',
     iosBundleId: 'com.example.retefagioliMarket',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '273398682154',
     projectId: 'retefagioli-market',
     storageBucket: 'retefagioli-market.appspot.com',
-    iosClientId: '273398682154-6502pt1dvoi9rjt4lia6pqbp6s5kvb3m.apps.googleusercontent.com',
+    iosClientId:
+        '273398682154-6502pt1dvoi9rjt4lia6pqbp6s5kvb3m.apps.googleusercontent.com',
     iosBundleId: 'com.example.retefagioliMarket',
   );
 }
