@@ -1,11 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'widget_custom.dart';
 import 'package:retefagioli_market/services/utils/validators.dart';
 
 class RegistrationFormCustom extends StatefulWidget {
-  const RegistrationFormCustom({Key? key}) : super(key: key);
+  final void Function() changeState;
+  const RegistrationFormCustom({Key? key, required this.changeState}) : super(key: key);
 
   @override
   State<RegistrationFormCustom> createState() => _RegistrationFormCustomState();
@@ -67,7 +66,9 @@ class _RegistrationFormCustomState extends State<RegistrationFormCustom> {
             padding: const EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0),
             child: ButtonCustom(
               customText: "Continua",
-              onPressed: () => {},
+              onPressed: () => {
+                widget.changeState()
+              },
             ),
           ),
         ],

@@ -19,6 +19,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  RegistrationState state = RegistrationState.credentials;
   @override
   Widget build(BuildContext context) {
     double bottom = min(MediaQuery.of(context).viewInsets.bottom, 200);
@@ -43,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const RegistrationFormCustom(),
+              getWidget()!,
               Container(
                 margin: const EdgeInsets.only(bottom: 40.0),
                 child: Row(
@@ -60,5 +61,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
+  }
+
+  Widget? getWidget() {
+    switch (state) {
+      case RegistrationState.credentials:
+        return RegistrationFormCustom(
+          changeState: () {
+            setState(
+              () {
+                state = RegistrationState.personalInfo;
+                debugPrint(state.name);
+              },
+            );
+          },
+        );
+      case RegistrationState.personalInfo:
+        return const LoginFormCustom();
+      default:
+        return null;
+    }
   }
 }
