@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:retefagioli_market/widgets/widget_custom.dart';
 import '../config/app_router.dart';
+import 'package:retefagioli_market/models/user_model.dart';
 
 enum RegistrationState {
   credentials,
   personalInfo,
   confirmation,
+  completed,
 }
 
 class RegisterScreen extends StatefulWidget {
@@ -20,6 +22,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   RegistrationState state = RegistrationState.credentials;
+  UserModel userModel = UserModel();
   @override
   Widget build(BuildContext context) {
     double bottom = min(MediaQuery.of(context).viewInsets.bottom, 200);
@@ -66,7 +69,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget? getWidget() {
     switch (state) {
       case RegistrationState.credentials:
-        return RegistrationFormCustom(
+        return RegistrationCredentialsForm(
+          userModel: userModel,
           changeState: () {
             setState(
               () {
