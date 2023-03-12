@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import '../config/app_router.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class RootScreen extends StatefulWidget {
+  const RootScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<RootScreen> createState() => _RootScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RootScreenState extends State<RootScreen> {
   final elementBar = <IconData>[
     Icons.home,
     Icons.search,
     Icons.heart_broken,
     Icons.account_box
   ];
+
   var _bottomNavIndex = 0;
   @override
   void initState() {
