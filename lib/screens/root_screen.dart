@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:go_router/go_router.dart';
+import 'package:retefagioli_market/config/app_router.dart';
 
 class RootScreen extends StatefulWidget {
-  const RootScreen({Key? key}) : super(key: key);
+  final Widget child;
+  const RootScreen({Key? key, required this.child}) : super(key: key);
 
   @override
   State<RootScreen> createState() => _RootScreenState();
@@ -17,7 +20,7 @@ class _RootScreenState extends State<RootScreen> {
     Icons.account_box
   ];
 
-  var _bottomNavIndex = 0;
+  
   @override
   void initState() {
     super.initState();
@@ -31,10 +34,9 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var currentIndex = shellRoutesNames.indexOf(GoRouter.of(context).location);
     return Scaffold(
-      body: const Center(
-        child: Text("Home Page"),
-      ),
+      body: widget.child,
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.shopping_cart), onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -42,10 +44,8 @@ class _RootScreenState extends State<RootScreen> {
         icons: elementBar,
         gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.defaultEdge,
-        activeIndex: _bottomNavIndex,
-        onTap: (index) => setState(() {
-          _bottomNavIndex = index;
-        }),
+        activeIndex: currentIndex,
+        onTap: (index) => context.go(shellRoutesNames[index]),
       ),
     );
   }
