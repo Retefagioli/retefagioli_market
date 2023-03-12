@@ -8,7 +8,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: "/",
       builder: (BuildContext context, GoRouterState state) {
-        return const EntryScreen();
+        return HomeScreen();
       },
     ),
     GoRoute(
@@ -23,23 +23,13 @@ final GoRouter router = GoRouter(
       ),
     ),
     GoRoute(
-      name: "home",
-      path: '/home',
-      builder: (BuildContext context, GoRouterState state) => HomeScreen(),
-      pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context,
-        state: state,
-        child: HomeScreen(),
-      ),
-    ),
-    GoRoute(
       name: "register",
       path: "/register",
-      builder: (BuildContext context, GoRouterState state) =>  RegisterScreen(),
+      builder: (BuildContext context, GoRouterState state) =>  const RegisterScreen(),
       pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context,
         state: state,
-        child: RegisterScreen(),
+        child: const RegisterScreen(),
       ),
     ),
   ],
